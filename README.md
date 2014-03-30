@@ -1,4 +1,26 @@
-starter
-=======
+Starter
+==========
 
-A simple starting point for personal projects
+A simple, git-clone friendly starting point for personal projects.
+
+## Includes
+
+* HTML Boilerplate
+* Bootstrap (CSS)
+* Gulp build process 
+  * Concat, Minify, Optimize Images, Useref, LiveReload, WireDep
+
+## Build tasks
+
+* `gulp watch`
+* `gulp build`
+* `gulp bundle`
+* `gulp clean`
+
+## Credits
+
+Based in part on Yeoman's [generator-gulp-webapp](https://github.com/yeoman/generator-gulp-webapp).
+
+## License
+
+(C) Addy Osmani 2014, released under the MIT license
