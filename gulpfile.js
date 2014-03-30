@@ -22,14 +22,12 @@ gulp.task('html', function () {
     return gulp.src('app/*.html')
         .pipe($.useref.assets())
         .pipe(jsFilter)
-        // .pipe($.traceur({
-        //     experimental: true,
-        //    sourceMaps: true,
-        //    modules: 'amd'
-        // }))
         .pipe($.uglify())
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
+        .pipe($.uncss({
+            html: ['app/index.html']
+        }))
         .pipe($.minifyCss())
         .pipe(cssFilter.restore())
         .pipe($.useref.restore())
