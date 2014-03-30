@@ -18,43 +18,55 @@
         <!-- endbuild -->
     </head>
     <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Starter</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about">About</a>
+                        </li>
+                        <li><a href="#services">Services</a>
+                        </li>
+                        <li><a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
         <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <h3 class="text-muted">starter</h3>
-            </div>
 
-            <div class="jumbotron">
-                <h1>Welcome</h1>
-                <p class="lead">Use this as a starting point for your projects.</p>
-            </div>
-
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>A simple starter template.</h1>
+                    <p>Minimal boilerplate and tooling to get a project started.</p>
                 </div>
             </div>
 
-            <div class="footer">
-                <p>♥</p>
-            </div>
-
         </div>
+        <!-- /.container -->
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/js/collapse.js"></script>
         <!-- endbower -->
+        <!-- endbuild -->
+    
+        <!-- build:js scripts/build.min.js -->
+        <script src="scripts/main.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -66,11 +78,5 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
-
-    
-        <!-- build:js scripts/build.min.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-
 </body>
 </html>
