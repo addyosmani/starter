@@ -1,0 +1,9 @@
+{
+  "name": "starter",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "jquery": "~1.10.2"
+  },
+  "devDependencies": {}
+}
