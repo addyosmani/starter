@@ -7,8 +7,11 @@ A simple, git-clone friendly starting point for personal projects.
 
 * HTML Boilerplate
 * Bootstrap (CSS)
-* Gulp build process 
-  * Concat, Minify, Optimize Images, Useref, LiveReload, WireDep
+* Gulp build process (Concat, Minify, Optimize Images, LiveReload, Wire Deps, Autoprefixer)
+
+## Uses
+
+* Bower. Deps are checked-in for ease of cloning.
 
 ## Build tasks
 
