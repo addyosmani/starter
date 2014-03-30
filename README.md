@@ -8,6 +8,7 @@ A simple, git-clone friendly starting point for personal projects.
 * HTML Boilerplate
 * Bootstrap (CSS)
 * Gulp build process (Concat, Minify, Optimize Images, LiveReload, Wire Deps, Autoprefixer)
+* Traceur (optional)
 
 ## Uses
 

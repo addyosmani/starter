@@ -6,7 +6,6 @@ var wiredep = require('wiredep').stream;
 // Load plugins
 var $ = require('gulp-load-plugins')();
 
-
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
@@ -23,10 +22,11 @@ gulp.task('html', function () {
     return gulp.src('app/*.html')
         .pipe($.useref.assets())
         .pipe(jsFilter)
-        .pipe($.traceur({
-            experimental: true,
-            sourceMaps: true
-        }))
+        // .pipe($.traceur({
+        //     experimental: true,
+        //    sourceMaps: true,
+        //    modules: 'amd'
+        // }))
         .pipe($.uglify())
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
