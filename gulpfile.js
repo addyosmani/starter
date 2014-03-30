@@ -35,9 +35,20 @@ gulp.task('images', function () {
         .pipe($.size());
 });
 
+// ES6 to ES5
+gulp.task('traceur', function () {
+    return gulp.src('app/scripts/**/*.js')
+        .pipe($.traceur({
+            experimental: true,
+        }))
+        .pipe($.browserify())
+        .pipe(gulp.dest('dist/scripts'))
+        .pipe($.size());
+});
+
 // Clean
 gulp.task('clean', function () {
-    return gulp.src(['dist/scripts', 'dist/images'], {read: false}).pipe($.clean());
+    return gulp.src(['dist','tmp'], {read: false}).pipe($.clean());
 });
 
 // Bundle
@@ -80,14 +91,12 @@ gulp.task('watch', ['connect'], function () {
     // Watch for changes in `app` folder
     gulp.watch([
         'app/*.html',
-        
         'app/scripts/**/*.js',
         'app/images/**/*'
     ], function(event) {
         return gulp.src(event.path)
             .pipe($.connect.reload());
     });
-    
 
     // Watch .js files
     gulp.watch('app/scripts/**/*.js', ['scripts']);
