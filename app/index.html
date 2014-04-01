@@ -58,16 +58,22 @@
         </div>
         <!-- /.container -->
 
+        
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="scripts/traceur-runtime.js"></script>
+        <!--
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/js/collapse.js"></script>
+        -->
         <!-- endbower -->
         <!-- endbuild -->
     
         <!-- build:js scripts/build.min.js -->
-        <script src="scripts/main.js"></script>
+        <!--<script src="scripts/main.js"></script>-->
         <!-- endbuild -->
+
+        <script data-main="compiled/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

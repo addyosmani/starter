@@ -6,12 +6,26 @@ var wiredep = require('wiredep').stream;
 // Load plugins
 var $ = require('gulp-load-plugins')();
 
+// Traceur options
+var traceurOptions = {
+    experimental: true,
+    sourceMaps: true,
+    modules: 'amd'
+};
+
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
-        .pipe($.jshint('.jshintrc'))
-        .pipe($.jshint.reporter('default'))
+        //.pipe($.jshint('.jshintrc'))
+        //.pipe($.jshint.reporter('default'))
         .pipe($.size());
+});
+
+// Traceur
+gulp.task('traceur', function() {
+  gulp.src('app/scripts/**/*.js')
+      .pipe($.traceur(traceurOptions))
+      .pipe(gulp.dest('app/compiled'));
 });
 
 // HTML
@@ -22,6 +36,7 @@ gulp.task('html', function () {
     return gulp.src('app/*.html')
         .pipe($.useref.assets())
         .pipe(jsFilter)
+        .pipe($.traceur(traceurOptions))
         .pipe($.uglify())
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
@@ -63,8 +78,9 @@ gulp.task('default', ['clean'], function () {
 
 // Connect
 gulp.task('connect', $.connect.server({
-    root: ['app'],
+    root: ['app'], //app
     port: 9000,
+    open: true,
     livereload: true
 }));
 
@@ -87,6 +103,10 @@ gulp.task('wiredep', function () {
 
 // Watch
 gulp.task('watch', ['connect'], function () {
+
+    // ES6 to ES5 transpilation
+    gulp.start('traceur');
+
     // Watch for changes in `app` folder
     gulp.watch([
         'app/*.html',
@@ -98,7 +118,7 @@ gulp.task('watch', ['connect'], function () {
     });
 
     // Watch .js files
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
+    gulp.watch('app/scripts/**/*.js', ['traceur']);
 
     // Watch image files
     gulp.watch('app/images/**/*', ['images']);
