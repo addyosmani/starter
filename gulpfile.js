@@ -1,5 +1,5 @@
 'use strict';
-// Based on Yeoman's generator-gulp-webapp
+// generated on 2014-04-18 using generator-gulp-webapp 0.0.7
 
 var gulp = require('gulp');
 
@@ -101,6 +101,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
     var server = $.livereload();
 
     // watch for changes
+
     gulp.watch([
         'app/*.html',
         '.tmp/styles/**/*.css',
