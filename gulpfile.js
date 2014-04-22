@@ -72,13 +72,11 @@ gulp.task('default', ['clean'], function () {
 
 gulp.task('connect', function () {
     var connect = require('connect');
-    var app = connect()
+    connect()
         .use(require('connect-livereload')({ port: 35729 }))
         .use(connect.static('app'))
         .use(connect.static('.tmp'))
-        .use(connect.directory('app'));
-
-    require('http').createServer(app)
+        .use(connect.directory('app'))
         .listen(9000)
         .on('listening', function () {
             console.log('Started connect web server on http://localhost:9000');
